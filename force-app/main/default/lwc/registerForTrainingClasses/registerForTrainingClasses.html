@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : Anderson Morino
+  @group             : 
+  @last modified on  : 09-13-2022
+  @last modified by  : Anderson Morino
+-->
+<template>
+    <lightning-card title="Universal Training Classes Registration" icon-name="custom:custom55">
+        <lightning-combobox
+            name="trainingClasses"
+            label="Universal Training Classes"
+            placeholder="Select one or more upcoming Training Classes"
+            value={value}
+            onchange={handleChange}
+            options={trainingOptions}>
+        </lightning-combobox>
+        <template for:each={allValues} for:item="val">
+            <lightning-pill key={val} label={val} name={val} onremove={handleRemove}>
+                <lightning-icon icon-name="custom:custom25"></lightning-icon>
+            </lightning-pill>
+        </template>
+    </lightning-card>
+    <lightning-button name="register" variant="brand" label="Register" onclick={saveRecord}></lightning-button>
+</template>
